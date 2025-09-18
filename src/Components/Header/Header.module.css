@@ -1,0 +1,221 @@
+/* Main Header */
+.header {
+  background-color: #131921;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px;
+  gap: 10px;
+  height: 60px;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo__container {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+.logo__container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Delivery */
+.delivery__container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+.delivery__container p {
+  font-size: 12px;
+  margin: 0;
+  color: #ccc;
+}
+.delivery__container span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.delivery__container:hover {
+  outline: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Search Bar */
+.search__container {
+  display: flex;
+  flex-grow: 1;
+  max-width: 800px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 10px;
+  min-width: 200px;
+}
+.search__container select {
+  background-color: #f3f3f3;
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+}
+.search__container input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+}
+.search__container button {
+  background-color: #febd69;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Language */
+.language__container {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+.language__container img {
+  width: 20px;
+  margin-right: 5px;
+}
+.language__container select {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+}
+
+/* Account */
+.account__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.account__container p {
+  margin: 0;
+  font-size: 12px;
+  color: #ccc;
+}
+.account__container span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.account__container:hover {
+  outline: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Orders */
+.orders__container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.orders__container p {
+  margin: 0;
+  font-size: 12px;
+  color: #ccc;
+}
+.orders__container span {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+.orders__container:hover {
+  outline: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Cart */
+.cart__container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.cart__container .cartIcon {
+  font-size: 26px;
+}
+.cart__container span {
+  color: #f08804;
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.cart__container:hover {
+  outline: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Lower Nav */
+.lower__container {
+  background-color: #232f3e;
+  color: white;
+  padding: 0 15px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+}
+.lower__container ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  font-size: 14px;
+}
+.lower__container ul li {
+  padding: 6px 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.lower__container ul li:first-child {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: bold;
+}
+.lower__container ul li:hover {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+  }
+  .search__container {
+    order: 3;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .account__container,
+  .orders__container,
+  .language__container,
+  .cart__container {
+    font-size: 12px;
+    padding: 4px;
+  }
+  .lower__container {
+    font-size: 12px;
+  }
+}
