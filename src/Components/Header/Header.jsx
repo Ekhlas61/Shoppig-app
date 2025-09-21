@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import classes from "./Header.module.css";
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
@@ -10,13 +11,13 @@ const Header = () => {
     <>
       <header className={classes.header}>
         {/* Logo */}
-        <a href="#" className={classes.logo__container}>
+        <Link to="/" className={classes.logo__container}>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"
             alt="Amazon Logo"
             style={{ height: "30px", objectFit: "contain" }}
           />
-        </a>
+        </Link>
 
         {/* Delivery */}
         <div className={classes.delivery__container}>
@@ -55,22 +56,22 @@ const Header = () => {
         </div>
 
         {/* Account */}
-        <div className={classes.account__container}>
+        <Link to="/auth" className={classes.account__container}>
           <p>Hello, sign in</p>
           <span>Account & Lists</span>
-        </div>
+        </Link>
 
         {/* Orders */}
-        <div className={classes.orders__container}>
+        <Link to="/orders" className={classes.orders__container}>
           <p>Returns</p>
           <span>& Orders</span>
-        </div>
+        </Link>
 
         {/* Cart */}
-        <div className={classes.cart__container}>
+        <Link to="/cart" className={classes.cart__container}>
           <BiCart className={classes.cartIcon} />
           <span>0</span>
-        </div>
+        </Link>
       </header>
       <LowerHeader />
     </>
