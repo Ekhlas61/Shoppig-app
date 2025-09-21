@@ -1,73 +1,70 @@
 import React, { useEffect, useState } from "react";
-import LayOut from "../../Components/LayOut/LayOut";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { productUrl } from "../../Api/endPoints";
+import LayOut from "../../Components/LayOut/LayOut";
+import Loader from "../../Components/Loader/Loader";
+import classes from "./ProductDetail.module.css";
 import { Rating } from "@mui/material";
 import CurrencyFormat from "../../Components/CurrencyFormat/CurrencyFormat";
-// import classes from './ProductDetail.module.css'
 
 const ProductDetail = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`${productUrl}/products/${productId}`)
-      .then((res) => {
+    const fetchProduct = async () => {
+      try {
+        setIsLoading(true);
+        const res = await axios.get(`${productUrl}/products/${productId}`);
         setProduct(res.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [productId]); // ✅ add dependency
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchProduct();
+  }, [productId]);
 
-  if (loading)
+  if (isLoading) {
     return (
       <LayOut>
-        <p style={{ padding: "20px" }}>Loading...</p>
+        <div className={classes.detail__container}>
+          <Loader />
+        </div>
       </LayOut>
     );
-  if (error)
+  }
+
+  if (!product) {
     return (
       <LayOut>
-        <p style={{ padding: "20px", color: "red" }}>Error: {error}</p>
+        <div className={classes.detail__container}>
+          <p>Product not found</p>
+        </div>
       </LayOut>
     );
-  if (!product)
-    return (
-      <LayOut>
-        <p style={{ padding: "20px" }}>No product found.</p>
-      </LayOut>
-    );
+  }
 
   return (
     <LayOut>
-      <div style={{ display: "flex", gap: "30px", padding: "30px" }}>
-        <img
-          src={product.image}
-          alt={product.title}
-          style={{ width: "250px", objectFit: "contain" }}
-        />
+      <div className={classes.detail__container}>
+        <img src={product.image} alt={product.title} />
         <div>
-          <h2>{product.title}</h2>
+          <h3>{product.title}</h3>
           <p>{product.description}</p>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <Rating value={product.rating?.rate} precision={0.1} readOnly />
+          <div>
+            <Rating
+              value={product.rating?.rate || 0}
+              precision={0.1}
+              readOnly
+            />
             <small>({product.rating?.count} reviews)</small>
           </div>
-          <strong
-            style={{ fontSize: "20px", display: "block", margin: "10px 0" }}
-          >
-            <CurrencyFormat amount={product.price} />
-          </strong>
-          <button style={{ padding: "10px 20px", cursor: "pointer" }}>
-            Add to Cart
-          </button>
+          <CurrencyFormat amount={product.price} />
+          <button>Add to Cart</button>
         </div>
       </div>
     </LayOut>

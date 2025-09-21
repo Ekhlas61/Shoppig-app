@@ -1,0 +1,33 @@
+.detail__container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.detail__container img {
+  max-width: 300px;
+  object-fit: contain;
+}
+
+.detail__container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail__container button {
+  background: #ff9900;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.detail__container button:hover {
+  background: #e68900;
+}

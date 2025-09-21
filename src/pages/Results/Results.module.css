@@ -1,12 +1,20 @@
 .products_container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    max-width: 1450px;
-    margin: 100px auto 100px auto;
-    gap: 50px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 1450px;
+  margin: 100px auto;
+  gap: 50px;
+  justify-items: center;
 }
 
 .products_container section {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+
+/* Loader wrapper stays centered */
+.loader_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
 }
