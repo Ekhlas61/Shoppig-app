@@ -11,12 +11,12 @@ const Header = () => {
 
 const[{basket}]=useContext(DataContext)
   return (
-    <>
+    <section className={classes.fixed}>
       <header className={classes.header}>
         {/* Logo */}
         <Link to="/" className={classes.logo__container}>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg"
+            src="https://nv-holders.com/wp-content/uploads/2024/08/Amazon-Logo-White@zeevector.png"
             alt="Amazon Logo"
             style={{ height: "30px", objectFit: "contain" }}
           />
@@ -77,7 +77,7 @@ const[{basket}]=useContext(DataContext)
         </Link>
       </header>
       <LowerHeader />
-    </>
+    </section>
   );
 };
 

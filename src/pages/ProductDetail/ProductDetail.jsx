@@ -63,7 +63,7 @@ const ProductDetail = () => {
             />
             <small>({product.rating?.count} reviews)</small>
           </div>
-          <CurrencyFormat amount={product.price} />
+          <CurrencyFormat amount={product.price} /> <br />
           <button>Add to Cart</button>
         </div>
       </div>
