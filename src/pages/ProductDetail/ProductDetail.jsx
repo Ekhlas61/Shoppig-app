@@ -51,20 +51,25 @@ const ProductDetail = () => {
   return (
     <LayOut>
       <div className={classes.detail__container}>
-        <img src={product.image} alt={product.title} />
+        {/* Left column: Image */}
+        <div>
+          <img src={product.image} alt={product.title} />
+        </div>
+
+        {/* Right column: Info */}
         <div>
           <h3>{product.title}</h3>
-          <p>{product.description}</p>
           <div>
             <Rating
               value={product.rating?.rate || 0}
               precision={0.1}
               readOnly
             />
-            <small>({product.rating?.count} reviews)</small>
+            <small>({product.rating?.count || 0} reviews)</small>
           </div>
-          <CurrencyFormat amount={product.price} /> <br />
-          <button>Add to Cart</button>
+          <CurrencyFormat amount={product.price} />
+          <p>{product.description}</p>
+          {/* Add-to-cart intentionally NOT shown */}
         </div>
       </div>
     </LayOut>

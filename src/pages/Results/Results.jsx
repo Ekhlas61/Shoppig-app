@@ -42,7 +42,11 @@ const Results = () => {
         ) : (
           <div className={classes.products_container}>
             {results?.map((product, index) => (
-              <ProductCard key={product.id || index} product={product} />
+              <ProductCard
+                key={product.id || index}
+                product={product}
+                renderAdd={true}
+              />
             ))}
           </div>
         )}
