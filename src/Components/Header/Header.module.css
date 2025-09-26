@@ -202,26 +202,263 @@
   border-radius: 2px;
 }
 
-/* Responsive */
+/* Responsive Design */
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .header {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  
+  .search__container {
+    max-width: 600px;
+    margin: 0 8px;
+  }
+  
+  .delivery__container,
+  .account__container,
+  .orders__container {
+    padding: 0 6px;
+  }
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    gap: 8px;
     height: auto;
+    min-height: 60px;
   }
+  
+  .logo__container {
+    width: 80px;
+    order: 1;
+  }
+  
+  .delivery__container {
+    order: 2;
+    padding: 4px;
+    min-width: 0;
+  }
+  
+  .delivery__container p {
+    font-size: 10px;
+  }
+  
+  .delivery__container span {
+    font-size: 12px;
+  }
+  
   .search__container {
-    order: 3;
+    order: 4;
     width: 100%;
-    margin-top: 8px;
+    margin: 8px 0 0 0;
+    min-width: 0;
   }
+  
+  .account__container {
+    order: 3;
+    padding: 4px 6px;
+    min-width: 0;
+  }
+  
+  .account__container p {
+    font-size: 10px;
+  }
+  
+  .account__container span {
+    font-size: 12px;
+  }
+  
+  .orders__container {
+    order: 5;
+    padding: 4px 6px;
+    min-width: 0;
+  }
+  
+  .orders__container p {
+    font-size: 10px;
+  }
+  
+  .orders__container span {
+    font-size: 12px;
+  }
+  
+  .language__container {
+    order: 6;
+    padding: 4px 6px;
+    min-width: 0;
+  }
+  
+  .language__container img {
+    width: 16px;
+  }
+  
+  .language__container select {
+    font-size: 12px;
+  }
+  
+  .cart__container {
+    order: 7;
+    padding: 4px 6px;
+    min-width: 0;
+  }
+  
+  .cart__container .cartIcon {
+    font-size: 22px;
+  }
+  
+  .cart__container span {
+    font-size: 14px;
+  }
+  
+  .lower__container {
+    font-size: 12px;
+    padding: 0 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .lower__container ul {
+    gap: 8px;
+  }
+  
+  .lower__container ul li {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .header {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+  
+  .logo__container {
+    width: 70px;
+  }
+  
+  .delivery__container {
+    padding: 2px 4px;
+  }
+  
+  .delivery__container p {
+    font-size: 9px;
+  }
+  
+  .delivery__container span {
+    font-size: 11px;
+  }
+  
+  .search__container {
+    margin: 6px 0 0 0;
+  }
+  
+  .search__container select {
+    padding: 8px 6px;
+    font-size: 11px;
+  }
+  
+  .search__container input {
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .search__container button {
+    padding: 0 10px;
+  }
+  
   .account__container,
   .orders__container,
   .language__container,
   .cart__container {
-    font-size: 12px;
-    padding: 4px;
+    padding: 2px 4px;
   }
-  .lower__container {
+  
+  .account__container p,
+  .orders__container p {
+    font-size: 9px;
+  }
+  
+  .account__container span,
+  .orders__container span {
+    font-size: 11px;
+  }
+  
+  .language__container img {
+    width: 14px;
+  }
+  
+  .language__container select {
+    font-size: 11px;
+  }
+  
+  .cart__container .cartIcon {
+    font-size: 20px;
+  }
+  
+  .cart__container span {
     font-size: 12px;
+  }
+  
+  .lower__container {
+    padding: 0 8px;
+  }
+  
+  .lower__container ul {
+    gap: 6px;
+  }
+  
+  .lower__container ul li {
+    padding: 3px 5px;
+    font-size: 11px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .header {
+    padding: 4px 6px;
+    gap: 4px;
+  }
+  
+  .logo__container {
+    width: 60px;
+  }
+  
+  .delivery__container,
+  .account__container,
+  .orders__container,
+  .language__container,
+  .cart__container {
+    padding: 2px 3px;
+  }
+  
+  .search__container {
+    margin: 4px 0 0 0;
+  }
+  
+  .search__container select {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+  
+  .search__container input {
+    padding: 6px;
+    font-size: 12px;
+  }
+  
+  .search__container button {
+    padding: 0 8px;
+  }
+  
+  .lower__container ul li {
+    padding: 2px 4px;
+    font-size: 10px;
   }
 }

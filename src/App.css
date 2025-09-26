@@ -2,10 +2,112 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-        box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
     --primary-color: #febd69;
     --primary-shade: #d49644;
+}
+
+/* Responsive Base Styles */
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Responsive Typography */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h2 {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+p {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Buttons */
+button {
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+}
+
+/* Responsive Form Elements */
+input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+}
+
+/* Responsive Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        padding: 0 8px;
+    }
+    
+    html {
+        font-size: 12px;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    button:hover,
+    a:hover {
+        transform: none;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

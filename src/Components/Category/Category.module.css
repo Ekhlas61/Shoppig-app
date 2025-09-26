@@ -40,3 +40,139 @@
   max-width: 100%;
   overflow: hidden;
 }
+
+/* Responsive Design */
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .category__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 30px;
+  }
+  
+  .category {
+    height: 320px;
+    max-width: 350px;
+  }
+  
+  .category img {
+    max-height: 200px;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+  .category__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    padding: 0 15px;
+  }
+  
+  .category {
+    height: 260px;
+    max-width: 280px;
+  }
+  
+  .category img {
+    max-height: 160px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .category__container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 0 15px;
+    margin-top: -8%;
+  }
+  
+  .category {
+    height: 240px;
+    max-width: 250px;
+  }
+  
+  .category img {
+    max-height: 140px;
+    padding: 0px 8px;
+  }
+  
+  .category h2,
+  .category p {
+    margin-left: 12px;
+    padding: 2px;
+  }
+  
+  .category p {
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .category__container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    padding: 0 10px;
+    margin-top: -5%;
+  }
+  
+  .category {
+    height: 200px;
+    max-width: 200px;
+  }
+  
+  .category img {
+    max-height: 120px;
+    padding: 0px 6px;
+  }
+  
+  .category h2,
+  .category p {
+    margin-left: 10px;
+    padding: 2px;
+  }
+  
+  .category h2 {
+    font-size: 14px;
+  }
+  
+  .category p {
+    font-size: 10px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 320px) {
+  .category__container {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 6px;
+    padding: 0 8px;
+    margin-top: -3%;
+  }
+  
+  .category {
+    height: 180px;
+    max-width: 180px;
+  }
+  
+  .category img {
+    max-height: 100px;
+    padding: 0px 4px;
+  }
+  
+  .category h2,
+  .category p {
+    margin-left: 8px;
+    padding: 1px;
+  }
+  
+  .category h2 {
+    font-size: 12px;
+  }
+  
+  .category p {
+    font-size: 9px;
+  }
+}

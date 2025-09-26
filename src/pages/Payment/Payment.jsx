@@ -51,7 +51,7 @@ function Payment() {
       });
 
       const clientSecret = response.data?.clientSecret;
-      console.log("✅ Client Secret received:", clientSecret);
+      console.log(" Client Secret received:", clientSecret);
 
       if (!clientSecret) {
         throw new Error("No client secret received from backend.");
@@ -71,7 +71,7 @@ function Payment() {
         throw new Error("Stripe payment failed: " + error.message);
       }
 
-      console.log("✅ PaymentIntent result:", paymentIntent);
+      console.log(" PaymentIntent result:", paymentIntent);
 
       // Only continue if payment succeeded
       if (paymentIntent.status !== "succeeded") {
@@ -97,7 +97,7 @@ function Payment() {
             created: paymentIntent.created,
           });
 
-        console.log("✅ Order saved to Firestore");
+        console.log(" Order saved to Firestore");
       } catch (firestoreError) {
         console.error("🔥 Firestore save failed:", firestoreError);
         alert("Saving order failed: " + firestoreError.message);

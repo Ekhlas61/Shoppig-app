@@ -14,3 +14,79 @@
         rgba(255, 255, 255)
     );
 }
+
+/* Responsive Design */
+
+/* Carousel responsive styles */
+.carousel-root {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Large desktop */
+@media (min-width: 1400px) {
+    .hero__img::before {
+        height: 350px;
+    }
+    
+    .carousel .slide img {
+        min-height: 500px;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .hero__img::before {
+        height: 280px;
+    }
+    
+    .carousel .slide img {
+        min-height: 400px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .hero__img::before {
+        height: 200px;
+    }
+    
+    .carousel .slide img {
+        min-height: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero__img::before {
+        height: 150px;
+    }
+    
+    .carousel .slide img {
+        min-height: 250px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 320px) {
+    .hero__img::before {
+        height: 120px;
+    }
+    
+    .carousel .slide img {
+        min-height: 200px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .carousel .control-arrow {
+        display: none;
+    }
+}
