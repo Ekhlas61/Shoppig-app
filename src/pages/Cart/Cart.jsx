@@ -39,7 +39,7 @@ function Cart() {
             <p>Oops! No item in your cart</p>
           ) : (
             basket.map((item, i) => (
-              <section className={classes.cart_product}>
+              <section key={item.id || i} className={classes.cart_product}>
                 <ProductCard key={i} product={item} renderAdd={false} />
 
                 <div className={classes.btn_container}>
@@ -48,7 +48,7 @@ function Cart() {
                     onClick={() => increment(item)}
                   >
                     {" "}
-                    <IoIosArrowUp  size={20}/>
+                    <IoIosArrowUp size={20} />
                   </button>
                   <span>{item.amount}</span>
                   <button

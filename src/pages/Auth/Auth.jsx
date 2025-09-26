@@ -1,6 +1,6 @@
 import React, { useState,useContext } from 'react'
 import classes from './Signup.module.css'
-import { Link ,useNavigate} from 'react-router-dom'
+import { Link ,useNavigate,useLocation} from 'react-router-dom'
 import {auth} from '../../Utility/firebase'
 import{signInWithEmailAndPassword,createUserWithEmailAndPassword} from 'firebase/auth'
 import { DataContext } from '../../Components/DataProvider/DataContext'
@@ -18,6 +18,8 @@ const [loading,setLoading]=useState({
 
 const[{user},dispatch]=useContext(DataContext)
 const navigate=useNavigate()
+const navStateData=useLocation()
+console.log(navStateData)
 
 console.log(user)
 
@@ -34,7 +36,7 @@ dispatch({
   user:userInfo.user
 });
 setLoading({...loading,signIn:false})
-navigate('/')
+navigate( navStateData?.state?.redirect ||'/')
 
     }).catch((err)=>{
     
@@ -51,7 +53,7 @@ dispatch({
   user: userInfo.user,
 });
 setLoading({...loading,signUp:false})
- navigate('/')
+navigate(navStateData?.state?.redirect || "/");
 
       }).catch((err)=>{
      
@@ -76,6 +78,19 @@ setLoading({...loading,signUp:false})
       {/* form */}
       <div className={classes.login__container}>
         <h1>Sign In</h1>
+        {navStateData?.state?.msg &&(
+          <small style={{
+            padding:'5px',
+            textAlign:'center',
+            color:'red',
+            fontWeight:'bold'
+          }}>
+            {navStateData?.state?.msg}
+
+          </small>
+        )
+
+        }
         <form action="">
           <div>
             <label htmlFor="email">Email</label>
